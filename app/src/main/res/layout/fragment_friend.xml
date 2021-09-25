@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.SocialScreen.FriendFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageButton_addFriend"
+            android:layout_width="51dp"
+            android:layout_height="47dp"
+            android:background="@drawable/ic_addfriend" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/imageButton_request"
+            android:layout_marginLeft="30dp"
+            android:layout_width="51dp"
+            android:layout_height="47dp"
+            android:background="@drawable/ic_request" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

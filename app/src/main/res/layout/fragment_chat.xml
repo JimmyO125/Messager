@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ChatScreen.ChatFragment">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_test3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="test3"
+        android:background="@drawable/rounded_button_register_login"
+        />
+
+</FrameLayout>

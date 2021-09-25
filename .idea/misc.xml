@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/drawable/ic_addFriend.xml" value="0.14739583333333334" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/drawable/rounded_button_decline_request.xml" value="0.2703125" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/drawable/rounded_button_register_login.xml" value="0.2203125" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/drawable/rounded_edittext_register_login.xml" value="0.2203125" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/drawable/rounded_select_photo_button.xml" value="0.2203125" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/activity_home_page.xml" value="0.1" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/activity_signed_in.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_add_friend.xml" value="0.536" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_add_friend_profile.xml" value="0.264" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_chat.xml" value="0.1" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_friend.xml" value="0.4" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_friends.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_group.xml" value="0.1" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_login.xml" value="0.4" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_profile.xml" value="0.16" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_request.xml" value="0.264" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_setting.xml" value="0.264" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_sign_up.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_social.xml" value="0.1" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_test.xml" value="0.1453125" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_test2.xml" value="0.11145833333333334" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_test3.xml" value="0.1453125" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/fragment_user_profile.xml" value="0.264" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/request_received.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/layout/request_sent.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/menu/bottom_navigation_homepage.xml" value="0.25052083333333336" />
+        <entry key="..\:/Users/junli/AndroidStudioProjects/Messager/app/src/main/res/menu/menu_homepage.xml" value="0.264" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
