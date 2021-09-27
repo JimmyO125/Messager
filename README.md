@@ -11,7 +11,7 @@ Functions Completed :
   (iv) Chat with friend  
   (v) Latest Message between user and user's friend  
 
-Third party library I use:  
+Third party libraries I used:  
   (i)Viewpager2 + Tablayout   
   (ii)Firebase   
   (iii)Circle ImageView   
