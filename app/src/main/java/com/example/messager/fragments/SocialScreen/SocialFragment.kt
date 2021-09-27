@@ -16,11 +16,6 @@ import kotlinx.android.synthetic.main.fragment_social.*
 
 class SocialFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -34,6 +29,7 @@ class SocialFragment : Fragment() {
         val adapter = SocialPagerAdapter(this.requireActivity().supportFragmentManager,lifecycle)
 
         viewPager2.adapter = adapter
+
 
         TabLayoutMediator(tabLayout,viewPager2){tab , position->
             when(position){

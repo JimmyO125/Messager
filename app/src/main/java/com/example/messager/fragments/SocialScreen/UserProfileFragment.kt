@@ -9,8 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.messager.R
+import com.example.messager.fragments.ChatScreen.ChatFragment
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -48,7 +51,10 @@ class UserProfileFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_user_profile, container, false)
-
+        (activity as AppCompatActivity).supportActionBar?.title = args.user.username
+        view.button_sendRequest.visibility = View.VISIBLE
+        view.button_declineRequest.visibility = View.GONE
+        view.button_chat.visibility = View.GONE
         ButtonStatus(view)
         setUpFriendInfo(view)
         val handler = Handler(Looper.getMainLooper())
@@ -56,7 +62,6 @@ class UserProfileFragment : Fragment() {
 
         },1000)
 
-        view.button_declineRequest.visibility = View.GONE
         view.button_sendRequest.setOnClickListener{
             if(currentState == sendRequest ){
                 sendFriendRequest(view)
@@ -64,14 +69,22 @@ class UserProfileFragment : Fragment() {
                 cancelFriendRequst()
                 ButtonStatus(view)
             }else if(currentState == declineRequest){
-
-            }else if(currentState == declineRequest){
-
-            }else if(currentState == acceptRequest){
-
-            }else if(currentState == acceptRequest){
+                AcceptFriendInvite(view)
+                ButtonStatus(view)
             }
 
+        }
+
+        view.button_declineRequest.setOnClickListener{
+            if(currentState == declineRequest){
+                declineFriendInvite(view)
+                ButtonStatus(view)
+            }
+        }
+
+        view.button_chat.setOnClickListener{
+            val action = UserProfileFragmentDirections.actionUserProfileFragmentToChatLogFragment(args.user)
+            findNavController().navigate(action)
         }
         return view
     }
@@ -88,9 +101,21 @@ class UserProfileFragment : Fragment() {
                     if(requestStatus.equals("Sent")){
                         view.button_sendRequest.setText(cancelRequest)
                         currentState = cancelRequest
+                        view.button_declineRequest.visibility = View.GONE
+                        view.button_sendRequest.visibility = View.VISIBLE
                     }else if(requestStatus.equals("Received")){
+                        view.button_sendRequest.text = acceptRequest
+                        view.button_declineRequest.text = declineRequest
+                        currentState = declineRequest
                         view.button_declineRequest.visibility = View.VISIBLE
-                        view.button_sendRequest.visibility = View.GONE
+                        view.button_sendRequest.visibility = View.VISIBLE
+                    }else if(requestStatus.equals("Accepted")){
+                        view.button_sendRequest.text = acceptedRequest
+                        view.button_sendRequest.isEnabled = false
+                        currentState = acceptedRequest
+                        view.button_declineRequest.visibility = View.GONE
+                        view.button_sendRequest.visibility = View.VISIBLE
+                        view.button_chat.visibility = View.VISIBLE
                     }
                 }else{
                     view.button_sendRequest.setText(sendRequest)
@@ -108,6 +133,30 @@ class UserProfileFragment : Fragment() {
 
     }
 
+    private fun declineFriendInvite(view: View){
+        val friendId = args.user.uid
+        val ref = FirebaseDatabase.getInstance(database).getReference().child("FriendRequests")
+
+        ref.child(uid).child(friendId).removeValue()
+        ref.child(friendId).child(uid).removeValue()
+        currentState = declinedRequest
+    }
+    private fun AcceptFriendInvite(view: View){
+        val friendId = args.user.uid
+        val ref = FirebaseDatabase.getInstance(database).getReference().child("FriendRequests")
+        ref.child(uid).child(friendId).child("requestStatus").setValue("Accepted")
+            .addOnCompleteListener(OnCompleteListener{
+                if(it.isSuccessful){
+                    ref.child(friendId).child(uid).child("requestStatus").setValue("Accepted")
+                        .addOnCompleteListener {
+                            if (it.isSuccessful) {
+                                currentState = acceptedRequest
+                                ButtonStatus(view)
+                            }
+                        }
+                }
+            })
+    }
     private fun cancelFriendRequst(){
         val friendId = args.user.uid
         val ref = FirebaseDatabase.getInstance(database).getReference().child("FriendRequests")

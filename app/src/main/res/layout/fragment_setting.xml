@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Profile"
+            android:layout_margin="30dp"
             android:background="@drawable/rounded_button_register_login"
             />
 
@@ -25,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Logout"
+            android:layout_margin="30dp"
             android:background="@drawable/rounded_button_register_login"
             />
 

@@ -46,7 +46,7 @@ class HomePageActivity : AppCompatActivity() {
         bottomNavigationView.isItemHorizontalTranslationEnabled = true
 
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.chatScreen,R.id.SocialScreen,R.id.settingScreen)
+            setOf(R.id.chatScreen,R.id.friendFragment,R.id.settingScreen)
         )
         setupActionBarWithNavController(navController,appBarConfiguration)
 

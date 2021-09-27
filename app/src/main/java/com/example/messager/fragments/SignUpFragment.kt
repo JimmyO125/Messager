@@ -74,7 +74,7 @@ class SignUpFragment : Fragment() {
         val ref = FirebaseDatabase.getInstance(database).getReference("/users/$uid")
 
         val username = view?.findViewById<TextInputEditText>(R.id.edittext_username)?.text.toString()
-        val user = User(uid,email,username,"empty")
+        val user = User(uid,email,username,"https://firebasestorage.googleapis.com/v0/b/completemessager.appspot.com/o/images%2Faec1afb3-664f-4a9c-9158-81fb9200c895?alt=media&token=970acdbe-21a4-463f-a79c-16b760786f3f")
 
         ref.setValue(user)
             .addOnSuccessListener {

@@ -2,21 +2,25 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/social"
-    app:startDestination="@id/SocialScreen">
+    android:id="@+id/friends"
+    app:startDestination="@id/friendFragment">
 
     <fragment
-        android:id="@+id/SocialScreen"
-        android:name="com.example.messager.fragments.SocialScreen.SocialFragment"
-        android:label="fragment_social"
-        tools:layout="@layout/fragment_social" >
+        android:id="@+id/friendFragment"
+        android:name="com.example.messager.fragments.SocialScreen.FriendFragment"
+        android:label="fragment_friend"
+        tools:layout="@layout/fragment_friend" >
         <action
-            android:id="@+id/action_SocialScreen_to_addFriendFragment"
+            android:id="@+id/action_friendFragment_to_addFriendFragment"
             app:destination="@id/addFriendFragment" />
         <action
-            android:id="@+id/action_SocialScreen_to_requestFragment"
+            android:id="@+id/action_friendFragment_to_requestFragment"
             app:destination="@id/requestFragment" />
+        <action
+            android:id="@+id/action_friendFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/addFriendFragment"
         android:name="com.example.messager.fragments.SocialScreen.AddFriendFragment"
@@ -34,6 +38,9 @@
         <argument
             android:name="user"
             app:argType="com.example.messager.classes.User" />
+        <action
+            android:id="@+id/action_userProfileFragment_to_chatLogFragment"
+            app:destination="@id/chatLogFragment" />
     </fragment>
     <fragment
         android:id="@+id/requestFragment"
@@ -44,4 +51,14 @@
             android:id="@+id/action_requestFragment_to_userProfileFragment"
             app:destination="@id/userProfileFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/chatLogFragment"
+        android:name="com.example.messager.fragments.ChatScreen.ChatLogFragment"
+        android:label="fragment_chat_log"
+        tools:layout="@layout/fragment_chat_log" >
+        <argument
+            android:name="user"
+            app:argType="com.example.messager.classes.User" />
+    </fragment>
+
 </navigation>

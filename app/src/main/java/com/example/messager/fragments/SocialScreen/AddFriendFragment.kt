@@ -12,10 +12,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.navigation.fragment.findNavController
 import com.example.messager.R
 import com.example.messager.classes.User
+import com.example.messager.fragments.ChatScreen.ChatFragment
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -43,7 +45,7 @@ class AddFriendFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_add_friend, container, false)
-
+        (activity as AppCompatActivity).supportActionBar?.title = "Add Friend"
         view.button_search.setOnClickListener{
                 searchFriend()
         }

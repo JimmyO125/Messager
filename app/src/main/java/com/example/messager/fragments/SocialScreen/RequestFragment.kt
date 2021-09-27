@@ -8,10 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.messager.R
 import com.example.messager.classes.User
+import com.example.messager.fragments.ChatScreen.ChatFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.squareup.picasso.Picasso
@@ -46,7 +48,7 @@ class RequestFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_request, container, false)
-
+        (activity as AppCompatActivity).supportActionBar?.title = "Requests"
         val recyclerViewSent = view.recyclerview_sentRequest
         val recyclerViewReceived = view.recyclerview_ReceivedRequest
 

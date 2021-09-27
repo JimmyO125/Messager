@@ -11,12 +11,16 @@
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" >
         <action
-            android:id="@+id/action_chatScreen_to_test3Fragment"
-            app:destination="@id/test3Fragment" />
+            android:id="@+id/action_chatScreen_to_chatLogFragment2"
+            app:destination="@id/chatLogFragment2" />
     </fragment>
     <fragment
-        android:id="@+id/test3Fragment"
-        android:name="com.example.messager.fragments.ChatScreen.Test3Fragment"
-        android:label="fragment_test3"
-        tools:layout="@layout/fragment_test3" />
+        android:id="@+id/chatLogFragment2"
+        android:name="com.example.messager.fragments.ChatScreen.ChatLogFragment"
+        android:label="fragment_chat_log"
+        tools:layout="@layout/fragment_chat_log" >
+        <argument
+            android:name="user"
+            app:argType="com.example.messager.classes.User" />
+    </fragment>
 </navigation>

@@ -7,9 +7,9 @@
         android:title="Chat"/>
 
     <item
-        android:id="@+id/social"
+        android:id="@+id/friends"
         android:icon="@drawable/ic_group"
-        android:title="Social"/>
+        android:title="Friends"/>
 
     <item
         android:id="@+id/setting"
